@@ -1,12 +1,38 @@
-import React from 'react'
+import React from "react";
+import  { Col, Container , Nav, Navbar, Row} from 'react-bootstrap';
 
 
-const Home = () => {
+
+
+export default function Home() {
   return (
-    <div>
-      <h1 style={{backgroundColor:"lightblue", textAlign:'center'}}>Welcome To Home Page</h1>
-    </div>
+    <>
+      <Container>
+        <Row>
+          <Col>
+          <Navbar variant="dark" bg="dark" expand='sm'>
+            <Container>
+              <Navbar.Brand>
+                <img style={{width:'30px', height:'30px'}} src="logo192.png" alt="" />
+                Boiler Plate
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls="my-nav"/>
+              <Navbar.Collapse id="my-nav">
+              <Nav className="me-auto fw-bold">
+                <Nav.Link href="/Home">  Home</Nav.Link>
+                <Nav.Link href="/Aboutus">Aboutus</Nav.Link>
+                <Nav.Link href="/Contactus">Contactus</Nav.Link>
+                <Nav.Link href="/Gallery">Gallery</Nav.Link>
+                <Nav.Link href="/Service">Service</Nav.Link>
+              </Nav>
+              <Navbar.Text> <a href="/">Log out</a></Navbar.Text>
+              </Navbar.Collapse>
+            </Container>
+            </Navbar>       
+          </Col>
+        </Row>
+      </Container>
+      <img style={{width:'100%',height:'800px'}} src='assets/home.jpg' alt="" />
+    </>
   )
 }
-
-export default Home
