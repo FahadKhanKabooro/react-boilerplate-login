@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFormik, } from 'formik';
 import * as Yup from 'yup';
 
@@ -18,19 +18,26 @@ const Login = () => {
             email:Yup.string().email("Invalid email address").required()
             
         }),
-       
+        
         onSubmit:(values)=>{
+          
 console.log("form submitted",values)
+navigate("/Home")
         },
+        
+        
+        
         
        
     })
     
     
     
+    
   return (
     <div>
       <form style={{textAlign:'center'}} onSubmit={formik.handleSubmit}>
+        <h1>Login Form</h1>
 <label style={{backgroundColor:'blue', color:"white", fontSize:'large'}} htmlFor="userName">User Name:</label>
 <input id='userName' type="text" name='username' placeholder='Enter User Name' onChange={formik.handleChange} value={formik.values.username} />
 <br/>
@@ -41,10 +48,11 @@ console.log("form submitted",values)
 <input  id='pass' type="Password"  placeholder='Enter Password' onChange={formik.handleChange} values={formik.values.password} />
 <br/>
 
+
+          
       
-      <Link to="/home">
-      <button type='submit'  >submit</button>
-             </Link>
+             <button style={{backgroundColor:'blue', color:'white'}} type='submit'  >submit</button>
+             
       </form>
     </div>
   )
