@@ -1,5 +1,7 @@
 import React from "react";
 import  { Col, Container , Nav, Navbar, Row} from 'react-bootstrap';
+import Slider from "./Slider";
+import HomeCards from "./HomeCards";
 
 
 
@@ -14,7 +16,7 @@ export default function Home() {
             <Container>
               <Navbar.Brand>
                 <img style={{width:'30px', height:'30px'}} src="logo192.png" alt="" />
-                Boiler Plate
+                Super Bikes
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="my-nav"/>
               <Navbar.Collapse id="my-nav">
@@ -32,7 +34,8 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
-      <img style={{width:'100%',height:'800px'}} src='assets/home.jpg' alt="" />
+      <Slider/>
+      <HomeCards/>
     </>
   )
 }
